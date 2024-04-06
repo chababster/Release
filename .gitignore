@@ -1,0 +1,4 @@
+node_modules
+networkFlaskApp/__pycache__/
+networkFlaskApp/output.txt
+networkFlaskApp/tmp.txt

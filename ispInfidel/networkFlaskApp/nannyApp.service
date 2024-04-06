@@ -1,0 +1,10 @@
+[Unit]
+Description=Network Nanny flask app
+
+[Service]
+WorkingDirectory=/home/pi/Public/github/Personal_Projects/networkFlaskApp/
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/Public/github/Personal_Projects/networkFlaskApp/app.py
+
+[Install]
+WantedBy=multi-user.target

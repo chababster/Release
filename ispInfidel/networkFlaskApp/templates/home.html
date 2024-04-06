@@ -1,0 +1,75 @@
+<!doctype html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<style>
+</style>
+<body>
+
+<div>
+
+
+<h1>Speed Test Results</h1>
+<table>
+{% for k,v in outputMap.items() %}
+    <tr>
+        <th>{{k}}</th>
+        <td>{{v}}</td>        
+    </tr>
+{% endfor %}
+</table>
+
+<canvas id="myChart" style="max-width: 100%;"></canvas>
+<script>
+    const xValues = {{hrL}};
+
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          label: "Download",
+          data: {{downL}},
+          borderColor: "green",
+          fill: false
+        },{
+          label: "Upload",
+          data: {{upL}},
+          borderColor: "red",
+          fill: false
+        }]
+      },
+      options: {
+        legend: {display: true}
+      }
+    });
+</script>
+</div>
+<div style="float: right;">
+    <h1>Client Info</h1>
+    <table>
+    {% for k,v in clientMap.items() %}
+        <tr>
+            <th>{{k}}</th>
+            <td>{{v}}</td>        
+        </tr>
+    {% endfor %}
+    </table>
+<iframe src="https://maps.google.com/maps?q={{clientCoords[0]}}, {{clientCoords[1]}}&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>
+
+</div>
+<div>
+    <h1>Server Info</h1>
+    <table>
+    {% for k,v in serverMap.items() %}
+        <tr>
+            <th>{{k}}</th>
+            <td>{{v}}</td>        
+        </tr>
+    {% endfor %}
+    </table>
+<iframe src="https://maps.google.com/maps?q={{serverCoords[0]}}, {{serverCoords[1]}}&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>
+
+</div>
+</body>
+</html>

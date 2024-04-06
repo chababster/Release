@@ -1,0 +1,10 @@
+[Unit]
+Description=Network Nanny network tester
+
+[Service]
+WorkingDirectory=/home/pi/Public/github/Personal_Projects/networkFlaskApp/
+User=pi
+ExecStart=/bin/bash /home/pi/Public/github/Personal_Projects/networkFlaskApp/runNetwork.sh
+
+[Install]
+WantedBy=multi-user.target
