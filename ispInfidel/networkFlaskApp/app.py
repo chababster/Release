@@ -9,13 +9,17 @@ def hello_world():
     lines = []
     with open('output.txt','r') as f:
         lines = f.readlines()
+
+    date=lines[0]
+    uname=lines[1]
+
     outputMap = {}
     serverMap = {}
     clientMap = {}
     serverCoords = []
     clientCoords = []
     chunkName = ""
-    for line in lines:
+    for line in lines[2:]:
         splitLine = line.split('\t')
         if(len(splitLine) == 3):
             if(chunkName == "server"):
@@ -51,6 +55,8 @@ def hello_world():
     print(historicSpeedD)
     print(historicSpeedU)
     return render_template('home.html',
+        date=date,
+        uname=uname,
         outputMap=outputMap,
         clientMap=clientMap,
         serverMap=serverMap,

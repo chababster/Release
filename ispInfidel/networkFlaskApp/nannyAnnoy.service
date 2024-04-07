@@ -2,9 +2,9 @@
 Description=Network Nanny network tester
 
 [Service]
-WorkingDirectory=/home/pi/Public/github/Personal_Projects/networkFlaskApp/
+WorkingDirectory=/var/ispInfidel/networkFlaskApp/
 User=pi
-ExecStart=/bin/bash /home/pi/Public/github/Personal_Projects/networkFlaskApp/runAnnoy.sh
+ExecStart=/bin/bash /var/ispInfidel/networkFlaskApp/runAnnoy.sh
 
 [Install]
 WantedBy=multi-user.target
