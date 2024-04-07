@@ -7,9 +7,10 @@ fi
 
 echo "### CREATING DEST DIR ###"
 sudo mkdir -p /var/ispInfidel/
+sudo cp -r networkFlaskApp /var/ispInfidel
 sudo chown -R $USER:$USER /var/ispInfidel
-cp -r networkFlaskApp /var/ispInfidel
 cd /var/ispInfidel/networkFlaskApp/
+
 
 echo "### INSTALLING PY REQS ###"
 python3 -m pip install -r requirements.txt --break-system-packages
