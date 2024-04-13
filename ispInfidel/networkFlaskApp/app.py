@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import os.path
 
 app = Flask(__name__)
 historicSpeedD = []
@@ -7,7 +8,11 @@ historicSpeedU = []
 @app.route("/")
 def hello_world():
     lines = []
-    with open('output.txt','r') as f:
+    outFile="output.txt"
+    if(not os.path.exists(outFile)):
+        return "<p>Cannot find output.txt file...</p>"
+    
+    with open(outFile,'r') as f:
         lines = f.readlines()
 
     date=lines[0]

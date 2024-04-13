@@ -1,14 +1,13 @@
 <!doctype html>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta http-equiv="refresh" content="300">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <style>
 </style>
 <body>
 
-<div>
-
-
+<div style="float: left;">
 <h1>Speed Test</h1>
 <h2>Date</h2>
 <p>{{date}}</p>
@@ -23,7 +22,9 @@
     </tr>
 {% endfor %}
 </table>
+</div>
 
+<div>
 <canvas id="myChart" style="max-width: 100%;"></canvas>
 <script>
     const xValues = {{hrL}};
